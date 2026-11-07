@@ -166,6 +166,15 @@ body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;dis
 .pop{animation:popk .26s cubic-bezier(.34,1.56,.64,1)}@keyframes popk{from{transform:scale(.9);opacity:.4}}
 
 html{scroll-padding-bottom:120px;scroll-padding-top:70px}
+/* ===== modern scrollbars: hidden on touch phones, slim pill on desktop ===== */
+@supports not selector(::-webkit-scrollbar){html{scrollbar-width:thin;scrollbar-color:rgba(128,128,150,.35) transparent;scrollbar-color:color-mix(in srgb,var(--acc) 45%,transparent) transparent}}
+::-webkit-scrollbar-button{display:none;width:0;height:0}
+::-webkit-scrollbar{width:10px;height:10px;background:transparent}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(128,128,150,.35);background:color-mix(in srgb,var(--acc) 40%,transparent);border-radius:99px;border:3px solid transparent;background-clip:padding-box}
+::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--acc) 70%,transparent);background-clip:padding-box;border:3px solid transparent}
+::-webkit-scrollbar-corner{background:transparent}
+@media (pointer:coarse){html,*{scrollbar-width:none}::-webkit-scrollbar{width:0;height:0;display:none}}
 </style></head><body>
 <noscript><p style="padding:24px;color:#fff">This app needs JavaScript.</p></noscript>
 <main id="app"><div style="display:grid;place-items:center;min-height:70dvh;color:#9aa7bd">Loading…</div></main>
