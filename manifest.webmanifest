@@ -1,7 +1,7 @@
 {
- "name": "AL Physics",
- "short_name": "AL Physics",
- "description": "A/L Physics practice",
+ "name": "A/L Pro",
+ "short_name": "A/L Pro",
+ "description": "A/L Physics, Combined Maths and ICT: notes, questions, games and a study planner",
  "start_url": "./index.html",
  "scope": "./",
  "id": "./index.html",
@@ -11,7 +11,7 @@
   "standalone"
  ],
  "orientation": "portrait",
- "background_color": "#ece7ff",
+ "background_color": "#14162b",
  "theme_color": "#ece7ff",
  "lang": "si",
  "icons": [
