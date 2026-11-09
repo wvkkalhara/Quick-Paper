@@ -224,6 +224,10 @@ input:focus,select:focus{border-color:var(--acc);box-shadow:0 0 0 4px var(--acc-
 .tick{border:2px solid var(--acc)!important;background:var(--gl)!important;box-shadow:none!important;min-width:28px;min-height:28px}.tick.on{background:var(--ok)!important;border-color:var(--ok)!important}.appbar .signin-pill{flex:none}
 
 .gb button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}.gb .gl{font-size:1.15em;line-height:1}.pm{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pmc{padding:12px 10px;min-height:64px;text-align:center;line-height:1.4;font-weight:600;font-size:.95em;overflow-wrap:anywhere}.pmc.sel{outline:3px solid var(--acc);outline-offset:1px}.pmc.ok{background:var(--ok-s,rgba(52,211,153,.18))!important;border-color:var(--ok)!important;opacity:.55;pointer-events:none}.bits{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:440px;margin-left:auto;margin-right:auto}.bit{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 0!important;border-radius:14px;border:2px solid var(--line);background:var(--gl);font-variant-numeric:tabular-nums}.bit b{font-size:1.7em;line-height:1}.bit span{font-size:.72em;color:var(--mu)}.bit.on{background:var(--acc)!important;border-color:var(--acc)!important;color:#fff}.bit.on span{color:rgba(255,255,255,.85)}.gin{padding:6px 12px;border-radius:10px;border:2px solid var(--line);font-weight:700;font-family:monospace;font-size:1.1em}.gin.on{border-color:var(--ok);color:var(--ok)}.gexp{font-family:monospace;font-size:1.15em;font-weight:700;line-height:1.6;overflow-wrap:anywhere}.big0{font-size:1.2em;font-family:monospace}
+
+.gtag{display:block;font-size:.72em;font-weight:500;color:var(--mu);margin-top:2px}.lad{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}.lad i{height:10px;border-radius:5px;background:var(--line)}.lad i.safe{outline:2px solid var(--am);outline-offset:1px}.lad i.done{background:var(--ok)}.lad i.now{background:var(--acc);animation:pulse 1s infinite alternate}@keyframes pulse{to{opacity:.45}}.rain{position:relative;height:calc(100dvh - 230px);min-height:300px;margin-top:10px;border-radius:18px;overflow:hidden;background:linear-gradient(var(--acc-s),transparent 70%);border:1px solid var(--line)}.rain::after{content:'';position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(transparent,rgba(251,113,133,.22))}.bub{position:absolute;top:0;max-width:46%;padding:10px 12px;border-radius:16px;background:var(--gl);border:2px solid var(--acc);font-weight:700;font-size:.92em;line-height:1.3;text-align:center;box-shadow:var(--sh);will-change:transform;overflow-wrap:anywhere}.bub.ok{background:var(--ok)!important;border-color:var(--ok);color:#fff}.bub.no{background:var(--no)!important;border-color:var(--no);color:#fff;opacity:.6}.bub.gone{opacity:0;transition:opacity .3s}.mem{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mc{position:relative;min-height:96px;border-radius:16px;border:2px solid var(--line);background:var(--acc);color:#fff;padding:6px!important;font-weight:700;overflow:hidden}.mc .mf{display:none;font-size:.85em;line-height:1.3;overflow-wrap:anywhere}.mc .mb{font-size:1.8em}.mc.up,.mc.got{background:var(--gl);color:var(--tx)}.mc.up .mb,.mc.got .mb{display:none}.mc.up .mf,.mc.got .mf{display:block}.mc .mf.q{color:#0284c7}.mc .mf.a{color:#b45309}.mc.got{border-color:var(--ok);opacity:.6}.duel{position:fixed;inset:0;display:flex;flex-direction:column;padding:calc(var(--sat) + 8px) 10px calc(var(--sab) + 8px);gap:6px;background:var(--bg)}.dp{flex:1;display:flex;flex-direction:column;gap:8px;padding:10px;border-radius:18px;background:var(--gl);border:2px solid var(--line);min-height:0;overflow:auto}.dp.p2{transform:rotate(180deg);border-color:#f472b6}.dp.p1{border-color:#38bdf8}.dp.locked{opacity:.45}.dq{font-weight:700;line-height:1.4;font-size:.98em}.do{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:auto}.dbtn{padding:10px 6px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);font-weight:600;font-size:.88em;line-height:1.25;min-height:48px;overflow-wrap:anywhere}.dbtn.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.dbtn.no{background:var(--no);color:#fff;border-color:var(--no)}.dmid{display:flex;align-items:center;justify-content:center;gap:10px}
+
+.gqx{font-weight:700;font-size:1.08em;line-height:1.5;text-align:center;overflow-wrap:anywhere}.lad i{background:rgba(120,120,160,.28)}
 </style></head><body>
 <noscript><p style="padding:24px;color:#fff">This app needs JavaScript.</p></noscript>
 <main id="app"><div style="display:grid;place-items:center;min-height:70dvh;color:#9aa7bd">Loading…</div></main>
@@ -300,7 +304,7 @@ function shell(html,tab){if(gameStop){gameStop();gameStop=null}clearInterval(tim
   const nav=$('#nav');nav.style.display=tab===null?'none':'';$$('button',nav).forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));document.documentElement.classList.toggle('nohav',tab===null)}
 const top=(t,right,back)=>`<div class="top"><button class="ib pr" data-a="back" aria-label="ආපසු">‹</button><h1>${t}</h1>${right||''}</div>`;
 function render(){load();let [r,a,b]=(location.hash.slice(1)||'home').split('/');if(r!=='welcome'&&r!=='account'&&!meta().uid&&!S.guest){history.replaceState(history.state,'','#welcome');r='welcome'}else if(r!=='welcome'&&r!=='account'&&r!=='setup'&&!S.prof){history.replaceState(history.state,'','#setup');r='setup'}if(S.prof&&!mySubs().includes(S.subj))S.subj=mySubs()[0];curView=r;closeModal(true);
-  const v={home:vHome,practice:vPractice,topic:vTopic,quiz:vQuiz,result:vResult,cards:vCards,deck:vDeck,game:vGame,formulas:vFormulas,mock:vMock,miss:vMiss,papers:vPapers,paper:vPaper,concepts:vConcepts,guide:vGuide,stats:vStats,settings:vSettings}[r]||EXTRA[r]||vHome;stopMathGames();stopExtraGames();stopGames2();navLabels();v(a,b)}
+  const v={home:vHome,practice:vPractice,topic:vTopic,quiz:vQuiz,result:vResult,cards:vCards,deck:vDeck,game:vGame,formulas:vFormulas,mock:vMock,miss:vMiss,papers:vPapers,paper:vPaper,concepts:vConcepts,guide:vGuide,stats:vStats,settings:vSettings}[r]||EXTRA[r]||vHome;stopMathGames();stopExtraGames();stopGames2();stopGames3();navLabels();v(a,b)}
 addEventListener('hashchange',render);
 // exit guard: first back on home shows a hint
 let exitT=0;
@@ -427,17 +431,18 @@ function installCard(force){const stand=matchMedia('(display-mode: standalone),(
   return `<div class="card sm mu">${file?'Opened from a file, so it works offline but cannot be installed. To install, open it from an https link (see the README).':ios?'In Safari: Share ⇒ Add to Home Screen.':'In the browser menu (⋮): Install app / Add to Home screen.'}</div>`}
 let deferred=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;if(curView==='home'||curView==='settings')render()});addEventListener('appinstalled',()=>{deferred=null;toast('App installed');S.inst=1;save()});
 // ---- GAME: Photon Run
-function vGame(){const G=[['@gstart','game','Photon Run','Physics · fly through the right answer'],['storm','f','Number Storm','Maths speed and accuracy'],['swipe','bulb','True or False?','All subjects · exam traps'],['pairs','paper','Pair Match','Match names with formulas'],['gates','lab','Gate Lab','Logic gates · electronics + ICT'],['bits','target','Bit Flip','ICT binary, hex, 2’s complement'],['graphs','graph','Graph Hunt','Physics graph shapes']];
-  shell(`<h1 class="mb">Games</h1>${speedCard()}<div class="grid2 mt">${G.map(x=>x[0][0]==='@'?`<button class="card tool pr" data-a="${x[0].slice(1)}">${ic(x[1])}<b>${x[2]}</b><span>${x[3]}</span></button>`:`<button class="card tool pr" data-go="${x[0]}">${ic(x[1])}<b>${x[2]}</b><span>${x[3]}</span></button>`).join('')}</div>
+function vGame(){const sj=gsub(),nm=sj==='mix'?'Mixed':SUBN[sj];
+  const G=[['@gstart','game','Photon Run',nm+' · fly into the right answer'],['ladder','crown','Ladder Climb',nm+' · 12 steps to the top'],['rain','bulb','Answer Rain',nm+' · catch the falling answer'],['memory','paper','Memory Flip',nm+' · find the pairs'],['duel','target','Duel (2 players)',nm+' · one phone, two players'],['pairs','pen','Pair Match',nm+' · match names and answers'],['swipe','q','True or False?','Pick a subject inside'],['storm','f','Number Storm','Maths only · mental maths'],['gates','lab','Gate Lab','Logic gates · electronics + ICT'],['bits','stat','Bit Flip','ICT · binary, hex, 2’s complement'],['graphs','graph','Graph Hunt','Physics only · graph shapes']];
+  shell(`<h1 class="mb">Games</h1>${subjPick()}<div class="mt">${speedCard()}</div><div class="xs mu c mt">${gCount(sj)} questions for ${nm}</div><div class="grid2 mt">${G.map(x=>x[0][0]==='@'?`<button class="card tool pr" data-a="${x[0].slice(1)}">${ic(x[1])}<b>${x[2]}</b><span>${x[3]}</span></button>`:`<button class="card tool pr" data-go="${x[0]}">${ic(x[1])}<b>${x[2]}</b><span>${x[3]}</span></button>`).join('')}</div>
   <div class="card sm mu mt st-s"><div><b style="color:var(--tx)">Photon Run:</b> tap A, B or C at the bottom (or swipe) to steer into the gate with the right answer. Best <b style="color:var(--am)">${S.best}</b>.</div><div><b style="color:var(--tx)">New to the games?</b> Keep the speed on Relaxed until you get most answers right, then speed up.</div></div>`,'game')}
 function drawPv(){const c=$('#pv');if(!c)return;const g=c.getContext('2d');g.strokeStyle='#5eead4';g.lineWidth=3;g.shadowColor='#5eead4';g.shadowBlur=14;g.beginPath();for(let x=0;x<=260;x++){const y=60+Math.sin(x/18)*22*Math.sin(x/260*Math.PI);x?g.lineTo(x+10,y):g.moveTo(x+10,y)}g.stroke();g.fillStyle='#fbbf24';g.shadowColor='#fbbf24';g.beginPath();g.arc(278,60,10,0,7);g.fill()}
 function startGame(){const box=document.createElement('div');box.className='gm';box.innerHTML=`<canvas></canvas><div class="gh"><div class="row sp"><button class="ib" data-g="x" aria-label="ආපසු">‹</button><span class="pill" id="gsc" style="font-size:1em;font-variant-numeric:tabular-nums">0</span><span class="pill" id="gco" style="color:var(--am)">×1</span><span class="pill" id="gli">◆◆◆</span></div><div class="gq" id="gq"></div></div><div class="gb" id="gb"></div>`;app.innerHTML='';app.append(box);$('#nav').style.display='none';
   const cv=$('canvas',box),g=cv.getContext('2d');let W=0,H=0,dpr=1,raf=0,alive=true,paused=false;
   const size=()=>{dpr=Math.min(2,devicePixelRatio||1);W=box.clientWidth;H=box.clientHeight;cv.width=W*dpr;cv.height=H*dpr;g.setTransform(dpr,0,0,dpr,0,0)};size();addEventListener('resize',size);
-  const pool=shuffle(DB.G);let pi=0,score=0,combo=1,lives=3,lane=1,px=1,speed=[.17,.27,.42][gsp()],gate=null,dist=0,parts=[],stars=[],shake=0,flash=0,flashC='#34d399',missed=[],answered=0,last=performance.now(),over=false,msgT=0;
+  const pool=gItems(gsub()).filter(x=>gLen(x.q)<=120&&gLen(x.a)<=30).map(x=>{const w=shuffle(x.w.filter(o=>gLen(o)<=30));return [x.q,x.a,w[0]||x.w[0],w[1]||x.w[1]]});let pi=0,score=0,combo=1,lives=3,lane=1,px=1,speed=[.17,.27,.42][gsp()],gate=null,dist=0,parts=[],stars=[],shake=0,flash=0,flashC='#34d399',missed=[],answered=0,last=performance.now(),over=false,msgT=0;
   for(let i=0;i<70;i++)stars.push({a:Math.random()*6.28,r:Math.random(),s:.3+Math.random()*.9});
   const lq=$('#gq'),lb=$('#gb');
-  function nextGate(){const it=pool[pi++%pool.length];const opts=shuffle([it[1],it[2],it[3]]);gate={z:0,opts,right:opts.indexOf(it[1]),q:it[0],a:it[1]};lq.innerHTML=rich(it[0]);lb.innerHTML=opts.map((o,i)=>`<button data-l="${i}" style="border-color:${['#38bdf8','#a78bfa','#fbbf24'][i]}"><b class="gl" style="color:${['#38bdf8','#a78bfa','#fbbf24'][i]}">${'ABC'[i]}</b>${rich(o)}</button>`).join('');mark()}
+  function nextGate(){const it=pool[pi++%pool.length];const opts=shuffle([it[1],it[2],it[3]]);gate={z:0,opts,right:opts.indexOf(it[1]),q:it[0],a:it[1]};lq.innerHTML=it[0];lb.innerHTML=opts.map((o,i)=>`<button data-l="${i}" style="border-color:${['#38bdf8','#a78bfa','#fbbf24'][i]}"><b class="gl" style="color:${['#38bdf8','#a78bfa','#fbbf24'][i]}">${'ABC'[i]}</b>${o}</button>`).join('');mark()}
   function mark(){$$('button',lb).forEach((b,i)=>b.classList.toggle('act',i===lane))}
   function setLane(l){lane=Math.max(0,Math.min(2,l));mark();beep(300+lane*90,.04,'triangle',.02)}
   lb.addEventListener('pointerdown',e=>{const b=e.target.closest('[data-l]');if(b){e.preventDefault();setLane(+b.dataset.l)}});
@@ -452,7 +457,7 @@ function startGame(){const box=document.createElement('div');box.className='gm';
   const hy=()=>H*.3, by=()=>H*.8; const laneX=(l,t)=>{const cx=W/2,sp=(W*.31)*(.12+.88*t);return cx+(l-1)*sp};const zY=t=>hy()+(by()-hy())*t*t;
   function burst(x,y,c,n){for(let i=0;i<n;i++)parts.push({x,y,vx:(Math.random()-.5)*5,vy:(Math.random()-.8)*5,l:1,c})}
   function resolve(){const ok=lane===gate.right;answered++;const lx=laneX(lane,1),ly=by();if(ok){const gain=10*combo;score+=gain;combo=Math.min(20,combo+1);speed=Math.min([.34,.62,1.05][gsp()],speed+[.004,.008,.012][gsp()]);flash=.5;flashC='#34d399';burst(lx,ly,'#5eead4',22);beep(620+combo*30,.09);buzz(12);if(combo%10===0&&lives<5){lives++;toast('Shield earned!',1100);beep(1200,.2)}}else{lives--;combo=1;shake=14;flash=.6;flashC='#fb7185';burst(lx,ly,'#fb7185',18);beep(150,.25,'sawtooth',.05);buzz([40,40,40]);missed.push([gate.q,gate.a]);toast(plain(gate.q)+' ⇒ '+plain(gate.a),gsp()?1500:2600)}$('#gsc').textContent=score;$('#gco').textContent='×'+combo;$('#gli').textContent='◆'.repeat(Math.max(0,lives));if(lives<=0)return gameOver();nextGate()}
-  function gameOver(){over=true;stop();gameStop=null;S.plays++;const nb=score>S.best;if(nb)S.best=score;addXP(Math.round(score/10),false);touchDay(0);badges();save();if(nb&&score>0)confetti();const o=document.createElement('div');o.className='gov';const uniq=[...new Map(missed.map(m=>[m[0],m])).values()];o.innerHTML=`<div class="card blur c st"><div class="sm mu">${nb?'New record!':'Round over'}</div><div class="big">${score}</div><div class="sm mu">Best ${S.best} · gates ${answered} · +${Math.round(score/10)} XP</div>${uniq.length?`<div style="text-align:left"><div class="lab n">Remember these</div>${uniq.map(m=>`<div class="sm" style="padding:5px 0;border-bottom:1px solid var(--line)">${rich(m[0])} ⇒ <b style="color:var(--ok)">${rich(m[1])}</b></div>`).join('')}</div>`:''}<button class="btn" data-g="r">Play again</button><button class="btn g" data-g="q">Quit</button></div>`;box.append(o)}
+  function gameOver(){over=true;stop();gameStop=null;S.plays++;const nb=score>S.best;if(nb)S.best=score;addXP(Math.round(score/10),false);touchDay(0);badges();save();if(nb&&score>0)confetti();const o=document.createElement('div');o.className='gov';const uniq=[...new Map(missed.map(m=>[m[0],m])).values()];o.innerHTML=`<div class="card blur c st"><div class="sm mu">${nb?'New record!':'Round over'}</div><div class="big">${score}</div><div class="sm mu">Best ${S.best} · gates ${answered} · +${Math.round(score/10)} XP</div>${uniq.length?`<div style="text-align:left"><div class="lab n">Remember these</div>${uniq.map(m=>`<div class="sm" style="padding:5px 0;border-bottom:1px solid var(--line)">${m[0]} ⇒ <b style="color:var(--ok)">${m[1]}</b></div>`).join('')}</div>`:''}<button class="btn" data-g="r">Play again</button><button class="btn g" data-g="q">Quit</button></div>`;box.append(o)}
   function loop(now){if(!alive||paused)return;if(!box.isConnected){stop();if(gameStop===stop)gameStop=null;return}raf=requestAnimationFrame(loop);const dt=Math.min(.05,(now-last)/1000);last=now;dist+=dt*speed;
     if(gate){gate.z+=dt*speed*.72;if(gate.z>=1){resolve();if(!alive)return}}
     px+=(lane-px)*Math.min(1,dt*16);
@@ -1044,11 +1049,8 @@ const plain=s=>String(s).replace(/<[^>]+>/g,'').replace(/_/g,'');
 function speedCard(){return `<div class="card st-s"><div class="row sp"><b>Game speed</b><span class="xs mu">${['No countdown, extra time to read','Normal timers','Exam-pace timers'][gsp()]}</span></div><div class="seg">${GSP_N.map((n,i)=>`<button class="${gsp()===i?'on':''}" data-gsp="${i}">${n}</button>`).join('')}</div></div>`}
 // ---------- PAIR MATCH: tap a prompt, then its answer
 let pmRun=null;
-function pmSource(){const sj=S.subj||'phy';
-  if(sj==='math'){const t=pickOne(DB.M.filter(t=>t.f.length>=1));let L=[];shuffle(DB.M).forEach(m=>m.f.forEach(f=>L.push([f[0],f[1],m.n])));return {name:'Maths formulas',L}}
-  if(sj==='ict'){let L=[];DB.I.forEach(t=>t.f.forEach(f=>L.push([f[0],f[1],t.n])));return {name:'ICT key terms',L}}
-  return {name:'Physics formulas & units',L:DB.G.map(g=>[rich(g[0]),rich(g[1]),''])}}
-function vPairs(){gameShell(`<div class="mgtop">${top('Pair Match')}</div><div class="hero st c"><div class="big" style="font-size:2.4em">⇄</div><div class="sm">Tap a question on the left, then its answer on the right. 3 rounds of 5 pairs. No timer: accuracy counts.</div><div class="sm mu">Subject: <b>${SUBN[S.subj||'phy']}</b> · Best <b style="color:var(--am)">${(S.pm||{})[S.subj||'phy']||0}</b></div><button class="btn" data-g2="pmgo">Start</button></div><div class="card sm mu mt">Matching makes you recall the link between a name and its formula or meaning, which sticks better than rereading.</div>`)}
+function pmSource(){const sj=gsub();return {name:SUBN[sj]||'Mixed',L:gItems(sj).filter(x=>x.k==='f'&&gLen(x.q)<=70&&gLen(x.a)<=60).map(x=>[x.q,x.a,''])}}
+function vPairs(){gameShell(`<div class="mgtop">${top('Pair Match')}</div>${subjPick()}<div class="hero st c mt"><div class="big" style="font-size:2.4em">⇄</div><div class="sm">Tap a question on the left, then its answer on the right. 3 rounds of 5 pairs. No timer: accuracy counts.</div><div class="sm mu">${SUBN[gsub()]||'Mixed'} · Best <b style="color:var(--am)">${(S.pm||{})[gsub()]||0}</b></div><button class="btn" data-g2="pmgo">Start</button></div><div class="card sm mu mt">Matching makes you recall the link between a name and its formula or meaning, which sticks better than rereading.</div>`)}
 function pmStart(){const src=pmSource();const seen=new Set(),L=[];shuffle(src.L).forEach(x=>{const k=plain(x[1]);if(!seen.has(k)&&!seen.has('q'+plain(x[0]))){seen.add(k);seen.add('q'+plain(x[0]));L.push(x)}});
   pmRun={L,round:0,score:0,miss:[],wrong:0,sel:null,done:0,t0:Date.now()};pmRound()}
 function pmRound(){const st=pmRun,set=st.L.slice(st.round*5,st.round*5+5);st.set=set;st.left=5;st.sel=null;
@@ -1061,7 +1063,7 @@ function pmTap(el){const st=pmRun;if(!st)return;const k=el.dataset.pm,side=k[0],
   if(i===st.sel){q.classList.remove('sel');q.classList.add('ok');el.classList.add('ok');st.score+=10;st.left--;sfx.ok();burstAt(el,'#34d399');st.sel=null;$('#pmS').textContent=st.score;
     if(!st.left)setTimeout(()=>{if(pmRun!==st)return;st.round++;if(st.round>=3)pmEnd();else pmRound()},700)}
   else{st.wrong++;st.score=Math.max(0,st.score-3);shakeEl(el);sfx.no();const x=st.set[st.sel];if(!st.miss.some(m=>m[0]===x[0]))st.miss.push(x);$('#pmS').textContent=st.score;$('#pmH').innerHTML='Not that one. Try again.'}}
-function pmEnd(){const st=pmRun,sj=S.subj||'phy';S.pm=S.pm||{};const rec=st.score>(S.pm[sj]||0);if(rec)S.pm[sj]=st.score;addXP(Math.round(st.score/5),false);touchDay(0);save();if(rec)confetti();
+function pmEnd(){const st=pmRun,sj=gsub();S.pm=S.pm||{};const rec=st.score>(S.pm[sj]||0);if(rec)S.pm[sj]=st.score;addXP(Math.round(st.score/5),false);touchDay(0);save();if(rec)confetti();
   gameShell(`<div class="card c st" style="margin-top:calc(var(--sat) + 30px)"><div class="sm mu">${rec?'New record!':'Done'}</div><div class="big">${st.score}</div><div class="sm mu">15 pairs · ${st.wrong} wrong taps</div>${st.miss.length?`<div style="text-align:left"><div class="lab n">Learn these</div>${st.miss.map(m=>`<div class="sm" style="padding:6px 0;border-bottom:1px solid var(--line)">${m[0]} ⇒ <b style="color:var(--ok)">${m[1]}</b></div>`).join('')}</div>`:''}<button class="btn" data-g2="pmgo">Again</button><button class="btn g" data-m="gexit">Quit</button></div>`);pmRun=null}
 // ---------- BIT FLIP: flip bits to build the number (ICT data representation)
 let bfRun=null;
@@ -1113,6 +1115,99 @@ document.addEventListener('click',e=>{let el;
   if(k==='pmgo')pmStart();else if(k==='bfgo')bfStart();else if(k==='bfchk'){bfRun.val===bfRun.cur.v?bfDone(true):(shakeEl($('.bits')),sfx.no(),toast('Not yet: '+bfRun.val+' — keep flipping'))}else if(k==='bfskip')bfDone(false);
   else if(k==='glgo')glStart();else if(k==='gla')glAns(el.dataset.v);else if(k==='glnext'){glRun.lock=0;glRun.n++;glRun.n>=12?glEnd():glNext()}});
 Object.assign(EXTRA,{pairs:vPairs,bits:vBits,gates:vGates});
+
+// ===================== GAMES 3: subject picker, big question pools, Ladder Climb, Answer Rain, Memory Flip, Duel =====================
+function gsub(){const L=mySubs(),v=S.gsub;if(v==='mix'&&L.length>1)return 'mix';if(L.includes(v))return v;return L.includes(S.subj)?S.subj:L[0]}
+function subjPick(){const L=mySubs();if(L.length<2)return '';const opts=[...L,'mix'];
+  return `<div class="card st-s"><b>Play with</b><div class="seg">${opts.map(s=>`<button class="${gsub()===s?'on':''}" data-gsub="${s}">${s==='mix'?'Mixed':SUBN[s]}</button>`).join('')}</div></div>`}
+const gLen=s=>plain(s).length;
+let GCACHE={};
+// items: {q, a, w:[...], k:'f' (fact/formula, good for pairs) | 'q' (question), sj}
+function gItems(sj){if(sj==='mix')return shuffle(mySubs().flatMap(s=>gItems(s)));if(GCACHE[sj])return shuffle(GCACHE[sj]);const out=[];
+  const fromQ=(bank)=>bank.forEach(q=>{if(q.f||gLen(q.q)>170||q.o.some(o=>o.includes('<svg')||gLen(o)>30))return;const a=q.o[q.a];out.push({q:q.q,a,w:q.o.filter((o,i)=>i!==q.a),k:'q',sj,d:q.d||2})});
+  const facts=(L,part)=>{L.forEach((x,i)=>{const pool=L.filter(y=>plain(y[1])!==plain(x[1])&&(!part||y[2]===x[2]));const w=shuffle(pool).slice(0,4).map(y=>y[1]);if(w.length>=2)out.push({q:x[0],a:x[1],w,k:'f',sj,d:1})})};
+  if(sj==='phy'){DB.G.forEach(g=>out.push({q:rich(g[0]),a:rich(g[1]),w:[rich(g[2]),rich(g[3])],k:'f',sj,d:1}));fromQ(DB.Q)}
+  if(sj==='math'){facts(DB.M.flatMap(t=>t.f.map(f=>[f[0]+` <span class="gtag">${t.n}</span>`,f[1],t.p])),true);
+    for(let i=0;i<120;i++){const g=stormQ(i%4);out.push({q:g.q,a:esc(g.a),w:g.o.filter(o=>o!==g.a).map(esc),k:'q',sj,d:1+(i%4>1)})}}
+  if(sj==='ict'){facts(DB.I.flatMap(t=>t.f.map(f=>[f[0],f[1],t.p])),false);fromQ(DB.IQ)}
+  out.forEach(x=>{const seen=new Set([plain(x.a)]);x.w=x.w.filter(w=>{const p=plain(w);if(seen.has(p))return false;seen.add(p);return true})});
+  GCACHE[sj]=out.filter(x=>x.w.length>=2);return shuffle(GCACHE[sj])}
+function gCount(sj){return gItems(sj).length}
+// make sure an item has n wrong answers (borrow answers from other items of the same subject)
+function fillW(it,n,pool){const w=it.w.slice();let g=0;while(w.length<n&&g++<60){const o=pickOne(pool);if(o!==it&&o.sj===it.sj&&!w.some(x=>plain(x)===plain(o.a))&&plain(o.a)!==plain(it.a))w.push(o.a)}return shuffle(w).slice(0,n)}
+const short=(it,q,a)=>gLen(it.q)<=q&&gLen(it.a)<=a&&it.w.every(w=>gLen(w)<=a);
+function endCard(title,big,sub,miss,again){return `<div class="card c st" style="margin-top:calc(var(--sat) + 30px)"><div class="sm mu">${title}</div><div class="big">${big}</div><div class="sm mu">${sub}</div>${miss.length?`<div style="text-align:left"><div class="lab n">Learn these</div>${miss.slice(0,12).map(m=>`<div class="sm" style="padding:6px 0;border-bottom:1px solid var(--line)">${m[0]} ⇒ <b style="color:var(--ok)">${m[1]}</b></div>`).join('')}</div>`:''}<button class="btn" data-g3="${again}">Play again</button><button class="btn g" data-m="gexit">Quit</button></div>`}
+const best=(k,v,lower)=>{S.gb=S.gb||{};const key=k+'_'+gsub(),o=S.gb[key];const rec=o==null||(lower?v<o:v>o);if(rec)S.gb[key]=v;return rec};
+const bestOf=k=>(S.gb||{})[k+'_'+gsub()];
+function intro(name,icon,desc,start,extra){return `<div class="mgtop">${top(name)}</div>${subjPick()}<div class="hero st c mt"><div class="big" style="font-size:2.3em">${icon}</div><div class="sm">${desc}</div><div class="sm mu">${SUBN[gsub()]||'Mixed'} · ${gCount(gsub())} questions${bestOf(start)!=null?` · Best <b style="color:var(--am)">${bestOf(start)}</b>`:''}</div><button class="btn" data-g3="${start}">Start</button></div>${extra||''}`}
+// ---------- LADDER CLIMB: 12 steps, two checkpoints, two helpers
+let ldRun=null;const LD_N=12;
+function vLadder(){gameShell(intro('Ladder Climb','🪜','Answer 12 questions in a row to reach the top. Steps 4 and 8 are safe checkpoints. You get one 50:50 and one Skip.','ld'))}
+function ldStart(){const P=gItems(gsub());const L=P.filter(x=>gLen(x.q)<=150).sort((a,b)=>(a.d+Math.random()*1.5)-(b.d+Math.random()*1.5));ldRun={P,L,i:0,step:0,fifty:1,skip:1,miss:[]};ldNext()}
+function ldNext(){const st=ldRun,it=st.L[st.i++%st.L.length];st.it=it;st.opts=shuffle([it.a,...fillW(it,3,st.P)]);st.lock=0;
+  gameShell(`<div class="gtop"><button class="ib" data-m="gexit" aria-label="Back">‹</button><span class="pill">Step ${st.step+1}/${LD_N}</span><span class="pill" style="color:var(--am)">Safe: ${st.step>=8?8:st.step>=4?4:0}</span></div>
+  <div class="lad mt">${Array.from({length:LD_N},(_,i)=>`<i class="${i<st.step?'done':i===st.step?'now':''} ${i===3||i===7?'safe':''}"></i>`).join('')}</div>
+  <div class="card qcard mt"><div class="gqx">${it.q}</div></div><div class="st-s mt" id="ldO">${st.opts.map((o,i)=>`<button class="opt" data-g3="lda" data-v="${i}"><span class="k">${'ABCD'[i]}</span><span class="v">${o}</span></button>`).join('')}</div>
+  <div class="grid2 mt"><button class="btn g" data-g3="ld50" ${st.fifty?'':'disabled'}>50:50</button><button class="btn g" data-g3="ldsk" ${st.skip?'':'disabled'}>Skip</button></div>`)}
+function ldAns(i){const st=ldRun;if(!st||st.lock)return;st.lock=1;const ok=st.opts[i]===st.it.a;const bs=$$('[data-g3="lda"]');bs.forEach((b,j)=>{b.disabled=true;if(st.opts[j]===st.it.a)b.classList.add('ok')});
+  if(ok){bs[i].classList.add('ok');sfx.ok();burstAt(bs[i],'#34d399');st.step++;if(st.step>=LD_N)return setTimeout(()=>ldEnd(true),800);setTimeout(()=>{if(ldRun===st)ldNext()},gsp()?700:1100)}
+  else{bs[i].classList.add('no');sfx.no();shakeEl(bs[i]);st.miss.push([st.it.q,st.it.a]);setTimeout(()=>{if(ldRun===st)ldEnd(false)},gsp()?1600:2600)}}
+function ldEnd(top){const st=ldRun,fin=top?LD_N:st.step>=8?8:st.step>=4?4:0;const rec=best('ld',fin);addXP(fin*3+(top?20:0),false);touchDay(0);save();if(top||rec&&fin)confetti();
+  gameShell(endCard(top?'You reached the top!':'Fell to the checkpoint',`${fin}/${LD_N}`,`You climbed ${st.step} steps`,st.miss,'ld'));ldRun=null}
+// ---------- ANSWER RAIN: tap the right answer before it reaches the ground
+let rnRun=null;
+function vRain(){gameShell(intro('Answer Rain','☔','Answers fall from the sky. Tap the correct one before it lands. Wrong taps and missed answers cost a heart. 3 hearts.','rn'))}
+function rnStart(){const P=gItems(gsub()).filter(x=>short(x,140,26));rnRun={P,i:0,score:0,lives:3,miss:[],bubs:[],t:performance.now(),n:0};
+  gameShell(`<div class="gtop"><button class="ib" data-m="gexit" aria-label="Back">‹</button><span class="pill" id="rnS" style="font-size:1em">0</span><span class="pill" id="rnL" style="color:var(--no)">♥♥♥</span></div><div class="card qcard mt" id="rnQ" style="min-height:64px"></div><div class="rain" id="rnBox"></div>`);
+  rnRound();requestAnimationFrame(rnLoop)}
+function rnRound(){const st=rnRun,it=st.P[st.i++%st.P.length];st.it=it;st.done=0;$('#rnQ').innerHTML=`<div class="gqx">${it.q}</div>`;popEl($('#rnQ'));
+  const box=$('#rnBox');box.innerHTML='';const opts=shuffle([it.a,...fillW(it,3,st.P)]);const W=box.clientWidth;
+  st.bubs=opts.map((o,i)=>{const b=document.createElement('button');b.className='bub';b.innerHTML=o;box.append(b);const bw=Math.min(W*.46,b.offsetWidth+4);const lanes=[0,1,2,3].map(k=>k*(W-bw)/3);
+    const x={el:b,y:-60-i*[95,75,60][gsp()]-Math.random()*30,x:lanes[i],ok:o===it.a,dead:0};b.style.left=x.x+'px';b.style.transform=`translateY(${x.y}px)`;b.onclick=()=>rnTap(x);return x})}
+function rnLoop(now){const st=rnRun;if(!st||!$('#rnBox'))return;const dt=Math.min(.05,(now-st.t)/1000);st.t=now;const H=$('#rnBox').clientHeight,v=[38,58,85][gsp()]+Math.min(40,st.n*1.5);
+  st.bubs.forEach(b=>{if(b.dead)return;b.y+=v*dt;b.el.style.transform=`translateY(${b.y}px)`;if(b.y>H-46){b.dead=1;b.el.classList.add('gone');if(b.ok&&!st.done){st.done=1;rnLose('Missed it');}}});
+  requestAnimationFrame(rnLoop)}
+function rnTap(b){const st=rnRun;if(!st||st.done||b.dead)return;if(b.ok){st.done=1;st.n++;st.score+=10+Math.max(0,Math.round(($('#rnBox').clientHeight-b.y)/40));b.el.classList.add('ok');sfx.ok();burstAt(b.el,'#34d399');$('#rnS').textContent=st.score;setTimeout(()=>{if(rnRun===st)rnRound()},500)}
+  else{b.dead=1;b.el.classList.add('no');sfx.no();shakeEl(b.el);rnLose(null)}}
+function rnLose(msg){const st=rnRun;st.lives--;$('#rnL').textContent='♥'.repeat(Math.max(0,st.lives));if(!st.miss.some(m=>m[0]===st.it.q))st.miss.push([st.it.q,st.it.a]);
+  if(msg){const r=st.bubs.find(b=>b.ok);if(r){r.el.classList.add('ok');r.dead=1}toast('Answer: '+plain(st.it.a),1600)}
+  if(st.lives<=0){st.done=1;setTimeout(()=>{if(rnRun===st)rnEnd()},900);return}if(msg)setTimeout(()=>{if(rnRun===st)rnRound()},gsp()?900:1600)}
+function rnEnd(){const st=rnRun;const rec=best('rn',st.score);addXP(Math.round(st.score/8),false);touchDay(0);save();if(rec&&st.score)confetti();gameShell(endCard(rec?'New record!':'Out of hearts',st.score,`${st.n} caught`,st.miss,'rn'));rnRun=null}
+// ---------- MEMORY FLIP: find the matching pairs
+let mmRun=null;
+function vMemory(){gameShell(intro('Memory Flip','🃏','12 cards face down: 6 questions and their answers. Flip two at a time and find the pairs in as few moves as you can.','mm'))}
+function mmStart(){const P=gItems(gsub()).filter(x=>x.k==='f'&&short(x,44,30));const seen=new Set(),L=[];P.forEach(x=>{const k=plain(x.a);if(!seen.has(k)&&L.length<6){seen.add(k);L.push(x)}});
+  const cards=shuffle(L.flatMap((x,i)=>[{p:i,h:x.q,s:'q'},{p:i,h:x.a,s:'a'}]));mmRun={L,cards,open:[],got:0,moves:0,lock:0};
+  gameShell(`<div class="gtop"><button class="ib" data-m="gexit" aria-label="Back">‹</button><span class="pill" id="mmM">0 moves</span><span class="pill" id="mmG">0/6</span></div><div class="mem mt">${cards.map((c,i)=>`<button class="mc pr" data-mm="${i}"><span class="mb">?</span><span class="mf ${c.s}">${c.h}</span></button>`).join('')}</div><div class="xs mu c mt">Blue cards are questions, gold cards are answers</div>`)}
+function mmTap(i){const st=mmRun;if(!st||st.lock)return;const el=$(`[data-mm="${i}"]`);if(el.classList.contains('up'))return;el.classList.add('up');sfx.flip();st.open.push(i);if(st.open.length<2)return;
+  st.moves++;$('#mmM').textContent=st.moves+' moves';const [a,b]=st.open;st.open=[];const A=st.cards[a],B=st.cards[b];
+  if(A.p===B.p&&A.s!==B.s){[a,b].forEach(k=>$(`[data-mm="${k}"]`).classList.add('got'));st.got++;$('#mmG').textContent=st.got+'/6';sfx.ok();burstAt(el,'#34d399');if(st.got>=6)setTimeout(()=>{if(mmRun===st)mmEnd()},700)}
+  else{st.lock=1;setTimeout(()=>{[a,b].forEach(k=>{const e=$(`[data-mm="${k}"]`);if(e)e.classList.remove('up')});st.lock=0},[1500,1100,800][gsp()])}}
+function mmEnd(){const st=mmRun;const rec=best('mm',st.moves,true);addXP(Math.max(5,30-st.moves),false);touchDay(0);save();if(rec)confetti();gameShell(endCard(rec?'New record!':'All pairs found',st.moves+' moves','6 pairs · perfect is 6 moves',st.L.map(x=>[x.q,x.a]),'mm'));mmRun=null}
+// ---------- DUEL: two players, one phone
+let duRun=null;
+function vDuel(){gameShell(intro('Duel','⚔️','Two players, one phone. Put the phone flat between you. The first to tap the right answer wins the round. A wrong tap locks you out for that round. 10 rounds.','du'))}
+function duStart(){const P=gItems(gsub()).filter(x=>short(x,120,28));duRun={P,i:0,r:0,sc:[0,0]};duRound()}
+function duRound(){const st=duRun,it=st.P[st.i++%st.P.length];st.it=it;st.opts=shuffle([it.a,...fillW(it,3,st.P)]);st.out=[0,0];st.lock=0;
+  const pane=p=>`<div class="dp ${p?'p2':'p1'}"><div class="row sp"><b style="color:${p?'#f472b6':'#38bdf8'}">Player ${p+1}</b><span class="pill" style="font-size:1em">${st.sc[p]}</span></div><div class="dq">${it.q}</div><div class="do">${st.opts.map((o,i)=>`<button class="dbtn" data-du="${p}${i}">${o}</button>`).join('')}</div></div>`;
+  gameShell(`<div class="duel">${pane(1)}<div class="dmid"><button class="ib" data-m="gexit" aria-label="Back">‹</button><span class="pill">Round ${st.r+1}/10</span></div>${pane(0)}</div>`)}
+function duTap(p,i){const st=duRun;if(!st||st.lock||st.out[p])return;const ok=st.opts[i]===st.it.a;const btn=$(`[data-du="${p}${i}"]`);
+  if(ok){st.lock=1;st.sc[p]++;btn.classList.add('ok');sfx.ok();burstAt(btn,p?'#f472b6':'#38bdf8');duReveal(p)}
+  else{st.out[p]=1;btn.classList.add('no');sfx.no();$(`.dp.${p?'p2':'p1'}`).classList.add('locked');if(st.out[0]&&st.out[1]){st.lock=1;duReveal(-1)}}}
+function duReveal(w){const st=duRun;$$('.dbtn').forEach(b=>{if(st.opts[+b.dataset.du[1]]===st.it.a)b.classList.add('ok')});$$('.dp .pill').forEach((e,k)=>{});
+  setTimeout(()=>{if(duRun!==st)return;st.r++;if(st.r>=10)duEnd();else duRound()},[2400,1700,1200][gsp()])}
+function duEnd(){const st=duRun,[a,b]=st.sc;addXP(10,false);touchDay(0);save();confetti();
+  gameShell(`<div class="card c st" style="margin-top:calc(var(--sat) + 30px)"><div class="sm mu">${a===b?'It’s a draw!':(a>b?'Player 1':'Player 2')+' wins!'}</div><div class="big">${a} : ${b}</div><div class="sm mu">Player 1 : Player 2</div><button class="btn" data-g3="du">Rematch</button><button class="btn g" data-m="gexit">Quit</button></div>`);duRun=null}
+function stopGames3(){ldRun=null;rnRun=null;mmRun=null;duRun=null}
+document.addEventListener('click',e=>{let el;
+  if(el=e.target.closest('[data-gsub]')){S.gsub=el.dataset.gsub;save();render();return}
+  if(el=e.target.closest('[data-mm]')){mmTap(+el.dataset.mm);return}
+  if(el=e.target.closest('[data-du]')){duTap(+el.dataset.du[0],+el.dataset.du[1]);return}
+  if(!(el=e.target.closest('[data-g3]')))return;const k=el.dataset.g3;
+  ({ld:ldStart,rn:rnStart,mm:mmStart,du:duStart,lda:()=>ldAns(+el.dataset.v),
+    ld50:()=>{const st=ldRun;if(!st||!st.fifty||st.lock)return;st.fifty=0;el.disabled=true;let n=0;$$('[data-g3="lda"]').forEach((b,j)=>{if(n<2&&st.opts[j]!==st.it.a&&Math.random()<.9){b.style.visibility='hidden';n++}});if(n<2)$$('[data-g3="lda"]').forEach((b,j)=>{if(n<2&&st.opts[j]!==st.it.a&&b.style.visibility!=='hidden'){b.style.visibility='hidden';n++}})},
+    ldsk:()=>{const st=ldRun;if(!st||!st.skip||st.lock)return;st.skip=0;ldNext();$('[data-g3="ldsk"]').disabled=true}}[k]||(()=>{}))()});
+Object.assign(EXTRA,{ladder:vLadder,rain:vRain,memory:vMemory,duel:vDuel});
 
 // ---- actions
 document.addEventListener('click',e=>{
