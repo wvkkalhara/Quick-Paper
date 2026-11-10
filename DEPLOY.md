@@ -1,4 +1,4 @@
-# Put AL Physics online (GitHub Pages) + turn on login
+# Put A/L Pro online (GitHub Pages) + turn on login
 
 Everything in this folder is what you upload. Nothing else is needed.
 
@@ -6,7 +6,8 @@ Everything in this folder is what you upload. Nothing else is needed.
 |---|---|
 | `index.html` | The whole app (questions, notes, games, planner, login) |
 | `sw.js` | Makes the installed app open with no internet |
-| `manifest.webmanifest`, `icon-192.png`, `icon-512.png` | Lets phones install it as an app |
+| `version.json` | Tells installed apps a new version is out, so every phone updates |
+| `manifest.webmanifest`, `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` | Lets phones install it as an app |
 | `.nojekyll` | Tells GitHub to serve the files as they are |
 
 There are **no private keys** in these files. The Firebase settings inside `index.html` are the public
@@ -23,7 +24,11 @@ rules in step 4, not by hiding that config.
 4. After about a minute your app is at `https://YOUR-GITHUB-NAME.github.io/al-physics/`.
 
 To update later: run `python src/build.py` in the `physics-app` folder, then upload the new files from this folder
-again (replace the old ones). Installed phones pick up the update the next time they open the app online.
+again (replace the old ones). **Always upload `index.html`, `sw.js` and `version.json` together.**
+Phones check `version.json` every time the app is opened or brought back to the screen while online: on a main
+screen the update installs straight away; during a quiz or game a small "Update" banner appears instead.
+GitHub Pages can take 1–10 minutes to publish a new upload. Settings → Check for updates forces a check, and
+Settings shows the version number so you can compare two phones.
 
 ## 2. Turn on Google and email login (Firebase console)
 
