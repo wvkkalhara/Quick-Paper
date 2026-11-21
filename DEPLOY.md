@@ -46,6 +46,8 @@ Without this step Google login shows "This website address is not authorised".
 
 ## 4. Protect everyone's data (Realtime Database rules)
 
+The `lb` part is the weekly leaderboard: signed-in students can read it, and each student can only write their own first name and question count.
+
 **Build → Realtime Database → Rules**, replace everything with this, then **Publish**:
 
 ```json
@@ -61,6 +63,17 @@ Without this step Google login shows "This website address is not authorised".
           ".validate": "newData.hasChildren(['at', 'data', 'dev']) && newData.child('at').isNumber() && newData.child('data').isString() && newData.child('data').val().length < 5000000"
         },
         "$other": { ".validate": false }
+      }
+    },
+    "lb": {
+      "$cls": {
+        "$wk": {
+          ".read": "auth != null",
+          "$uid": {
+            ".write": "auth != null && auth.uid === $uid",
+            ".validate": "!newData.exists() || (newData.hasChildren(['n', 'q']) && newData.child('n').isString() && newData.child('n').val().length <= 20 && newData.child('q').isNumber() && newData.child('q').val() >= 0 && newData.child('q').val() < 100000)"
+          }
+        }
       }
     },
     "aceplan": {

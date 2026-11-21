@@ -1,11 +1,13 @@
 // A/L Pro service worker: works offline, updates itself when online.
-const V='phy-b0672ee3',LIB='fb-sdk-v1',A=['./','index.html','manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable-512.png'];
+const V='phy-428f2536',LIB='fb-sdk-v1',A=['./','index.html','manifest.webmanifest','icon-192.png','icon-512.png','icon-maskable-512.png'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(V).then(c=>c.addAll(A.map(u=>new Request(u,{cache:'reload'})))).then(()=>self.skipWaiting())));
 self.addEventListener('message',e=>{if(e.data==='skip')self.skipWaiting()});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V&&x!==LIB).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET')return;const u=new URL(r.url);
   // Firebase SDK files (versioned, never change): cache first so login works offline after the first visit
   if(u.hostname==='www.gstatic.com'&&u.pathname.startsWith('/firebasejs/')){e.respondWith(caches.open(LIB).then(c=>c.match(r).then(h=>h||fetch(r).then(n=>{if(n.ok)c.put(r,n.clone());return n}))));return}
+  // PDF viewer library (versioned): cache first so papers open offline after the first use
+  if(u.hostname==='cdnjs.cloudflare.com'&&u.pathname.includes('/pdf.js/')){e.respondWith(caches.open(LIB).then(c=>c.match(r).then(h=>h||fetch(r).then(n=>{if(n.ok)c.put(r,n.clone());return n}))));return}
   if(u.origin!==location.origin)return; // auth + database traffic always goes to the network
   // the app page: network first (fresh updates), cache when offline
   if(u.pathname.endsWith('/version.json'))return; // always straight from the network
