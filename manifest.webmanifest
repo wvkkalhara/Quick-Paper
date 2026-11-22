@@ -2,7 +2,7 @@
  "name": "A/L Pro",
  "short_name": "A/L Pro",
  "description": "A/L Physics, Combined Maths and ICT: notes, questions, games and a study planner",
- "start_url": "./index.html",
+ "start_url": "./",
  "scope": "./",
  "id": "./index.html",
  "display": "fullscreen",
